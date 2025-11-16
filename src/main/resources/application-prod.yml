@@ -1,0 +1,124 @@
+# 生产环境配置
+spring:
+  # Spring AI Alibaba 配置
+  ai:
+    alibaba:
+      dashscope:
+        # 通义千问 API 配置
+        api-key: ${DASHSCOPE_API_KEY}
+        # 模型配置
+        chat:
+          options:
+            model: qwen-flash
+            temperature: 0.8
+            max-tokens: 4000
+            top-p: 0.8
+        # 重试配置
+        retry:
+          max-attempts: 5  # 生产环境更多重试
+          backoff:
+            initial-interval: 2000
+            max-interval: 30000
+            multiplier: 2.5
+
+# 服务器配置
+server:
+  port: 8080
+  servlet:
+    context-path: /api
+  # 生产环境严格跨域控制
+  cors:
+    allowed-origins: "https://aitravelplanner.com,https://www.aitravelplanner.com"
+    allowed-methods: "GET,POST,PUT,DELETE"
+    allowed-headers: "Content-Type,Authorization"
+    allow-credentials: true
+  # 生产环境安全配置
+  tomcat:
+    max-threads: 200
+    min-spare-threads: 10
+    connection-timeout: 20000
+    max-connections: 8192
+
+# 日志配置 - 生产环境精简日志
+logging:
+  level:
+    root: WARN
+    com.alibaba.cloud.ai: WARN
+    org.springframework.ai: WARN
+    io.github.xyt662.aitravelplanner: INFO
+    org.springframework.web: WARN
+    org.springframework.security: WARN
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n"
+    file: "%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n"
+  file:
+    name: logs/prod/ai-travel-planner.log
+    max-size: 100MB
+    max-history: 30
+  # 生产环境日志轮转
+  logback:
+    rollingpolicy:
+      max-file-size: 50MB
+      max-history: 30
+      total-size-cap: 1GB
+
+# 管理端点配置 - 生产环境最小化端点
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics
+  endpoint:
+    health:
+      show-details: never  # 生产环境不显示详细信息
+    info:
+      enabled: true
+  info:
+    env:
+      enabled: false  # 生产环境不暴露环境信息
+  # 生产环境安全配置
+  security:
+    enabled: true
+
+# 生产环境特定配置
+app:
+  # 生产环境使用正式API Key
+  api-keys:
+    amap: ${AMAP_API_KEY}
+    tavily: ${TAVILY_API_KEY}
+  
+  # 生产环境外部服务配置
+  external-services:
+    amap:
+      base-url: https://restapi.amap.com/v3
+      timeout: 10000  # 生产环境更长的超时时间
+      retry-count: 5
+    tavily:
+      base-url: https://api.tavily.com
+      timeout: 20000
+      retry-count: 3
+      max-results: 10
+  
+  # 生产环境旅行规划配置
+  travel:
+    default-days: 3
+    max-days: 14
+    max-attractions: 15
+    max-restaurants: 8
+  
+  # 生产环境性能和安全配置
+  performance:
+    cache-enabled: true
+    cache-ttl: 7200  # 2小时缓存
+    rate-limit:
+      enabled: true
+      requests-per-minute: 200
+      burst-capacity: 50
+  security:
+    cors-enabled: true
+    csrf-enabled: true
+    rate-limiting: true
+  monitoring:
+    metrics-enabled: true
+    tracing-enabled: true
+    alerting-enabled: true

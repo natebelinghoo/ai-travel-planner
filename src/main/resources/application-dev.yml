@@ -1,0 +1,97 @@
+# 开发环境配置
+spring:
+  # Spring AI Alibaba 配置
+  ai:
+    alibaba:
+      dashscope:
+        # 通义千问 API 配置
+        api-key: sk-d0aa3e418d114482863f6ae8b40d2785
+        # 模型配置
+        chat:
+          options:
+            model: qwen-flash
+            temperature: 0.8  
+            max-tokens: 1000
+            top-p: 0.9
+        # 重试配置
+        retry:
+          max-attempts: 2
+          backoff:
+            initial-interval: 500
+            max-interval: 5000
+            multiplier: 1.5
+
+# 服务器配置
+server:
+  port: 8080
+  servlet:
+    context-path: /api
+  # 开发环境允许跨域
+  cors:
+    allowed-origins: "*"
+    allowed-methods: "*"
+    allowed-headers: "*"
+
+# 日志配置 - 开发环境详细日志
+logging:
+  level:
+    root: INFO
+    com.alibaba.cloud.ai: DEBUG
+    org.springframework.ai: DEBUG
+    io.github.xyt662.aitravelplanner: DEBUG
+    org.springframework.web: DEBUG
+    org.springframework.security: DEBUG
+  pattern:
+    console: "%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n"
+    file: "%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n"
+  file:
+    name: logs/dev/ai-travel-planner.log
+    max-size: 10MB
+    max-history: 7
+
+# 管理端点配置 - 开发环境开放更多端点
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"  # 开发环境开放所有端点
+  endpoint:
+    health:
+      show-details: always
+    info:
+      enabled: true
+  info:
+    env:
+      enabled: true
+
+# 开发环境特定配置
+app:
+  # API Key 配置
+  api-keys:
+    amap: ef3a062bbec0286da3de098f705c9775
+    tavily: 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
+  
+  # 开发环境外部服务配置
+  external-services:
+    amap:
+      base-url: https://restapi.amap.com/v3
+      timeout: 3000  # 开发环境更短的超时时间
+      retry-count: 2
+    tavily:
+      base-url: https://api.tavily.com
+      timeout: 5000
+      retry-count: 1
+      max-results: 3  # 开发环境限制结果数量
+  
+  # 开发环境旅行规划配置
+  travel:
+    default-days: 2
+    max-days: 7
+    max-attractions: 5
+    max-restaurants: 3
+  
+  # 开发环境调试配置
+  debug:
+    enabled: true
+    mock-external-apis: true  # 开发环境可以模拟外部API
+    log-requests: true

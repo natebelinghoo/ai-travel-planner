@@ -1,0 +1,47 @@
+spring:
+  profiles:
+    active: dev  # 默认使用开发环境
+  application:
+    name: ai-travel-planner
+
+# 通用配置
+info:
+  app:
+    name: AI Travel Planner
+    description: 智能旅行规划助手
+    version: 0.0.1-SNAPSHOT
+    encoding: UTF-8
+    java:
+      version: ${java.version}
+
+# 通用应用配置
+app:
+  api-keys:
+    # 高德地图 API Key
+    amap: ${AMAP_API_KEY:your-amap-key-here}
+    # Tavily 搜索 API Key
+    tavily: ${TAVILY_API_KEY:your-tavily-key-here}
+  
+  # 外部服务配置
+  external-services:
+    # 高德地图服务配置
+    amap:
+      base-url: https://restapi.amap.com/v3
+      timeout: 5000
+      retry-count: 3
+    # Tavily 搜索服务配置
+    tavily:
+      base-url: https://api.tavily.com
+      timeout: 10000
+      retry-count: 2
+      max-results: 5
+  
+  # 旅行规划配置
+  travel:
+    # 默认规划参数
+    default-days: 3
+    max-days: 14
+    # 景点推荐数量
+    max-attractions: 10
+    # 餐厅推荐数量
+    max-restaurants: 5
