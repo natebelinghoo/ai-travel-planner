@@ -3,6 +3,11 @@ spring:
     active: dev  # 默认使用开发环境
   application:
     name: ai-travel-planner
+  ai:
+    dashscope:
+      api-key: sk-d0aa3e418d114482863f6ae8b40d2785
+      chat:
+        api-key: sk-d0aa3e418d114482863f6ae8b40d2785
 
 # 通用配置
 info:
