@@ -1,0 +1,33 @@
+2025-12-04 17:27:19.525 [main] INFO  i.g.n.a.start.ApplicationTests - Starting ApplicationTests using Java 21.0.7 with PID 42864 (started by xyt in /Users/xyt/ai-travel-planner/start)
+2025-12-04 17:27:19.525 [main] INFO  i.g.n.a.start.ApplicationTests - The following 1 profile is active: "dev"
+2025-12-04 17:27:19.534 [main] DEBUG o.s.w.c.s.GenericWebApplicationContext - Refreshing org.springframework.web.context.support.GenericWebApplicationContext@54dcbb9f
+2025-12-04 17:27:19.986 [main] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - 2 mappings in 'requestMappingHandlerMapping'
+2025-12-04 17:27:19.996 [main] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2025-12-04 17:27:20.034 [main] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2025-12-04 17:27:20.049 [main] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2025-12-04 17:27:20.158 [main] INFO  i.g.n.a.start.ApplicationTests - Started ApplicationTests in 0.758 seconds (process running for 1.075)
+2025-12-04 17:27:20.511 [SpringApplicationShutdownHook] DEBUG o.s.w.c.s.GenericWebApplicationContext - Closing org.springframework.web.context.support.GenericWebApplicationContext@54dcbb9f, started on Thu Dec 04 17:27:19 CST 2025
+2025-12-04 17:37:24.549 [main] INFO  i.g.n.a.start.ApplicationTests - Starting ApplicationTests using Java 21.0.7 with PID 50930 (started by xyt in /Users/xyt/ai-travel-planner/travel-start)
+2025-12-04 17:37:24.550 [main] INFO  i.g.n.a.start.ApplicationTests - The following 1 profile is active: "dev"
+2025-12-04 17:37:24.558 [main] DEBUG o.s.w.c.s.GenericWebApplicationContext - Refreshing org.springframework.web.context.support.GenericWebApplicationContext@375b5b7f
+2025-12-04 17:37:24.983 [main] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - 2 mappings in 'requestMappingHandlerMapping'
+2025-12-04 17:37:24.993 [main] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2025-12-04 17:37:25.030 [main] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2025-12-04 17:37:25.046 [main] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2025-12-04 17:37:25.146 [main] INFO  i.g.n.a.start.ApplicationTests - Started ApplicationTests in 0.716 seconds (process running for 1.021)
+2025-12-04 17:37:25.512 [SpringApplicationShutdownHook] DEBUG o.s.w.c.s.GenericWebApplicationContext - Closing org.springframework.web.context.support.GenericWebApplicationContext@375b5b7f, started on Thu Dec 04 17:37:24 CST 2025
+2025-12-04 17:39:08.661 [main] INFO  i.g.n.a.start.Application - Starting Application using Java 21.0.7 with PID 52506 (/Users/xyt/ai-travel-planner/travel-start/target/classes started by xyt in /Users/xyt/ai-travel-planner/travel-start)
+2025-12-04 17:39:08.661 [main] INFO  i.g.n.a.start.Application - The following 1 profile is active: "dev"
+2025-12-04 17:39:08.953 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-12-04 17:39:08.957 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-12-04 17:39:08.958 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.40]
+2025-12-04 17:39:08.973 [main] INFO  o.a.c.c.C.[.[localhost].[/api] - Initializing Spring embedded WebApplicationContext
+2025-12-04 17:39:08.973 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 297 ms
+2025-12-04 17:39:09.082 [main] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - 2 mappings in 'requestMappingHandlerMapping'
+2025-12-04 17:39:09.090 [main] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2025-12-04 17:39:09.124 [main] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2025-12-04 17:39:09.138 [main] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2025-12-04 17:39:09.216 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/api'
+2025-12-04 17:39:09.219 [main] INFO  i.g.n.a.start.Application - Started Application in 0.694 seconds (process running for 0.786)
+2025-12-04 17:39:24.899 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-12-04 17:39:24.904 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
